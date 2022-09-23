@@ -1,8 +1,32 @@
 {
     "common": {
         "name": "tractive",
-        "version": "0.0.2",
+        "version": "0.0.4",
         "news": {
+            "0.0.4": {
+                "en": "Version Mismatch",
+                "de": "Version Mismatch",
+                "ru": "Версия Mismatch",
+                "pt": "Mismatch de versão",
+                "nl": "Versie Mismatch",
+                "fr": "Version Mismatch",
+                "it": "Versione Mismatch",
+                "es": "Versión Mismatch",
+                "pl": "Mismatch",
+                "zh-cn": "Version Mismatch"
+            },
+            "0.0.3": {
+                "en": "Version Mismatch",
+                "de": "Version Mismatch",
+                "ru": "Версия Mismatch",
+                "pt": "Mismatch de versão",
+                "nl": "Versie Mismatch",
+                "fr": "Version Mismatch",
+                "it": "Versione Mismatch",
+                "es": "Versión Mismatch",
+                "pl": "Mismatch",
+                "zh-cn": "Version Mismatch"
+            },
             "0.0.2": {
                 "en": "First Running Version",
                 "de": "Erste ausführbare Version",
