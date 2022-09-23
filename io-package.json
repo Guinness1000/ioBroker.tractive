@@ -1,8 +1,20 @@
 {
     "common": {
         "name": "tractive",
-        "version": "0.0.1",
+        "version": "0.0.2",
         "news": {
+            "0.0.2": {
+                "en": "First Running Version",
+                "de": "Erste ausführbare Version",
+                "ru": "Первая беговая версия",
+                "pt": "Primeira versão em execução",
+                "nl": "Eerst Running Version",
+                "fr": "First Running Version",
+                "it": "Prima versione in esecuzione",
+                "es": "Primera versión",
+                "pl": "Pierwsza wersja Running",
+                "zh-cn": "第一 Running Version"
+            },
             "0.0.1": {
                 "en": "initial release",
                 "de": "Erstveröffentlichung",
