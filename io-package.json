@@ -1,0 +1,500 @@
+{
+    "common": {
+        "name": "tractive",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "titleLang": {
+            "en": "Tractive GPS Tracker",
+            "de": "Tractive GPS-Tracker",
+            "ru": "Тяговый GPS-трекер",
+            "pt": "Rastreador GPS Trativo",
+            "nl": "Tractive GPS-tracker",
+            "fr": "Traqueur GPS de traction",
+            "it": "Localizzatore GPS Tractive",
+            "es": "Rastreador GPS Tractivo",
+            "pl": "Przyczepny lokalizator GPS",
+            "zh-cn": "牵引式 GPS 追踪器"
+        },
+        "desc": {
+            "en": "Adapter for Tractive GPS Tracker",
+            "de": "Adapter für Tractive GPS Tracker",
+            "ru": "Адаптер для GPS-трекера Tractive",
+            "pt": "Adaptador para Tractive GPS Tracker",
+            "nl": "Adapter voor Tractive GPS Tracker",
+            "fr": "Adaptateur pour Tractive GPS Tracker",
+            "it": "Adattatore per localizzatore GPS Tractive",
+            "es": "Adaptador para rastreador GPS Tractive",
+            "pl": "Adapter do Tractive GPS Tracker",
+            "zh-cn": "适配器 für Traactive GPS 追踪器"
+        },
+        "authors": [
+            "Patrick Winkler <patrick.winkler@web.de>"
+        ],
+        "keywords": [
+            "Tractive",
+            "GPS"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "main.js",
+        "icon": "tractive.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/Guinness1000/ioBroker.tractive/main/admin/tractive.png",
+        "readme": "https://github.com/Guinness1000/ioBroker.tractive/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "schedule",
+        "schedule": "* * * * *",
+        "type": "geoposition",
+        "compact": true,
+        "connectionType": "cloud",
+        "dataSource": "poll",
+        "materialize": true,
+        "adminUI": {
+            "config": "json"
+        },
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }            
+        ],
+        "globalDependencies": [
+            {
+                "admin": ">=5.1.28"
+            }
+        ]
+    },
+    "encryptedNative": [
+        "password"
+    ],
+    "protectedNative": [
+        "password"
+    ],
+    "native": {
+        "accountemail": "",
+	    "password": ""
+    },
+    "objects": [],
+    "instanceObjects": [
+		{
+			"_id": "info",
+			"type": "channel",
+			"common": {
+				"name":  {
+                    "en": "Information",
+                    "de": "Informationen",
+                    "ru": "Информация",
+                    "pt": "Informação",
+                    "nl": "Informatie",
+                    "fr": "Information",
+                    "it": "Informazioni",
+                    "es": "Información",
+                    "pl": "Informacja",
+                    "zh-cn": "信息"
+                  }
+			},
+			"native": {}
+		},
+        {
+			"_id": "info.Token",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": "Bearer Token",
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "info.TokenExpiry",
+			"type": "state",
+			"common": {
+				"role": "date",
+				"name": "Token Expiry",
+				"type": "number",
+				"read": true,
+				"write": false,
+                "def": 0
+			},
+			"native": {}
+		},
+        {
+			"_id": "info.UserID",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": "UserID",
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "deviceinfo",
+			"type": "channel",
+			"common": {
+				"name": {
+                      "en": "Device Information",
+                      "de": "Informationen zum Produkt",
+                      "ru": "Информация об устройстве",
+                      "pt": "InformaÃ§Ã£o do dispositivo",
+                      "nl": "Device Informatie",
+                      "fr": "Information sur les dispositifs",
+                      "it": "Informazioni sul dispositivo",
+                      "es": "Información sobre dispositivos",
+                      "pl": "Device Information",
+                      "zh-cn": "证人信息"
+                  }
+			},
+			"native": {}
+		},
+		{
+			"_id": "deviceinfo.TrackerID",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": {
+                    "en": "GPS Tracker ID",
+                    "de": "GPS Tracker ID",
+                    "ru": "GPS трекер ID",
+                    "pt": "GPS Tracker ID",
+                    "nl": "GPS Tracker ID",
+                    "fr": "GPS Tracker ID",
+                    "it": "ID GPS Tracker",
+                    "es": "GPS Tracker ID",
+                    "pl": "GPS Tracker (ang.)",
+                    "zh-cn": "GPS追踪ker ID"
+                  },
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "deviceinfo.TrackerVersion",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": {
+                    "en": "GPS Tracker Version",
+                    "de": "GPS Tracker Version",
+                    "ru": "Версия GPS Tracker",
+                    "pt": "Versão do GPS Tracker",
+                    "nl": "GPS Tracker Version",
+                    "fr": "Version GPS Tracker",
+                    "it": "Versione GPS Tracker",
+                    "es": "GPS Tracker Version",
+                    "pl": "GPS Tracker (ang.)",
+                    "zh-cn": "GPS追踪器"
+                  },
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "deviceinfo.BatteryLevel",
+			"type": "state",
+			"common": {
+				"role": "value.battery",
+				"name": {
+                    "en": "GPS Tracker Battery Level",
+                    "de": "GPS Tracker Batterie Level",
+                    "ru": "GPS Tracker Уровень батареи",
+                    "pt": "Nível da bateria do GPS Tracker",
+                    "nl": "GPS Tracker Battery",
+                    "fr": "Niveau de pile GPS",
+                    "it": "Livello batteria GPS Tracker",
+                    "es": "Nivel de batería de rastreador GPS",
+                    "pl": "GPS Tracker Battery",
+                    "zh-cn": "GPS追踪ker Battery等级"
+                  },
+				"type": "number",
+				"read": true,
+				"write": false,
+                "def": 0
+			},
+			"native": {}
+		},
+        {
+			"_id": "deviceinfo.BatteryCharging",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": {
+                    "en": "Battery Charging",
+                    "de": "Batterieladegerät",
+                    "ru": "Зарядка батареи",
+                    "pt": "Carregamento da bateria",
+                    "nl": "Batterij opladen",
+                    "fr": "Batterie",
+                    "it": "Caricamento della batteria",
+                    "es": "Carga de batería",
+                    "pl": "Bateria Charging",
+                    "zh-cn": "包 托"
+                  },
+				"type": "boolean",
+				"read": true,
+				"write": false,
+                "def": false
+            },
+			"native": {}
+		},
+        {
+			"_id": "deviceinfo.BatteryState",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": {
+                    "en": "GPS Tracker Battery State",
+                    "de": "GPS Tracker Batterie Status",
+                    "ru": "GPS Tracker батареи состояние",
+                    "pt": "GPS Tracker Estado da bateria",
+                    "nl": "GPS Tracker Battery State",
+                    "fr": "GPS Tracker Battery State",
+                    "it": "GPS Tracker Stato della batteria",
+                    "es": "GPS Tracker Battery State",
+                    "pl": "GPS Tracker Battery (ang.)",
+                    "zh-cn": "GPS追踪ker Battery State"
+                  },
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "deviceinfo.DeviceState",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": {
+                    "en": "GPS Tracker Device State",
+                    "de": "GPS Tracker Geräte Status",
+                    "ru": "GPS Tracker устройство состояние",
+                    "pt": "GPS Tracker Estado do dispositivo",
+                    "nl": "GPS Tracker Device State",
+                    "fr": "GPS Tracker Device State",
+                    "it": "GPS Tracker Stato dispositivo",
+                    "es": "GPS Tracker Device State",
+                    "pl": "GPS Tracker Device State (ang.)",
+                    "zh-cn": "GPS追踪ker Devic State"
+                  },
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "devicelocation",
+			"type": "channel",
+			"common": {
+				"name": {
+                    "en": "Device Location",
+                    "de": "Geräte Standort",
+                    "ru": "Расположение устройства",
+                    "pt": "Localização do dispositivo",
+                    "nl": "Device Location",
+                    "fr": "Emplacement du dispositif",
+                    "it": "Posizione del dispositivo",
+                    "es": "Ubicación del dispositivo",
+                    "pl": "Oficjalna strona",
+                    "zh-cn": "Devic Location"
+                  }
+			},
+			"native": {}
+		},
+		{
+			"_id": "devicelocation.Latitude",
+			"type": "state",
+			"common": {
+				"role": "value.gps.latitude",
+				"name": {
+                    "en": "Latitude",
+                    "de": "Breitengrad",
+                    "ru": "Широта",
+                    "pt": "Latitude",
+                    "nl": "Latitude",
+                    "fr": "Latitude",
+                    "it": "Latitudine",
+                    "es": "Latitud",
+                    "pl": "Latitudes",
+                    "zh-cn": "学历"
+                  },
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "devicelocation.Longitude",
+			"type": "state",
+			"common": {
+				"role": "value.gps.longitude",
+				"name": {
+                    "en": "Longitude",
+                    "de": "Längengrad",
+                    "ru": "Долгота",
+                    "pt": "Longitude",
+                    "nl": "Longit",
+                    "fr": "Longitude",
+                    "it": "Longitudine",
+                    "es": "Longitud",
+                    "pl": "Długość",
+                    "zh-cn": "长 度"
+                  },
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "devicelocation.SourceType",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": {
+                    "en": "Source Type",
+                    "de": "Quelle",
+                    "ru": "Исходный тип",
+                    "pt": "Tipo de fonte",
+                    "nl": "Source Type",
+                    "fr": "Source Type",
+                    "it": "Tipo di sorgente",
+                    "es": "Tipo de fuente",
+                    "pl": "Źródło",
+                    "zh-cn": "来源"
+                  },
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		},
+        {
+			"_id": "devicelocation.Altitude",
+			"type": "state",
+			"common": {
+				"role": "value.gps.elevation",
+				"name": {
+                    "en": "Altitude",
+                    "de": "Höhe",
+                    "ru": "Высота",
+                    "pt": "Altitude",
+                    "nl": "Algemene",
+                    "fr": "Altitude",
+                    "it": "Altitudine",
+                    "es": "Altitud",
+                    "pl": "Altitude",
+                    "zh-cn": "态度"
+                  },
+				"type": "number",
+				"read": true,
+				"write": false,
+                "def": 0
+			},
+			"native": {}
+		},
+        {
+			"_id": "devicelocation.Speed",
+			"type": "state",
+			"common": {
+				"role": "value.speed",
+				"name": {
+                    "en": "Speed",
+                    "de": "Geschwindigkeit",
+                    "ru": "Скорость",
+                    "pt": "Velocidade",
+                    "nl": "Speed",
+                    "fr": "Vitesse",
+                    "it": "Velocità",
+                    "es": "Velocidad",
+                    "pl": "Speed",
+                    "zh-cn": "读者"
+                  },
+				"type": "number",
+				"read": true,
+				"write": false,
+                "def": 0
+			},
+			"native": {}
+		},
+        {
+			"_id": "devicelocation.Accuracy",
+			"type": "state",
+			"common": {
+				"role": "text",
+				"name": {
+                    "en": "GPS Accuracy",
+                    "de": "GPS Genauigkeit",
+                    "ru": "GPS Точность",
+                    "pt": "GPS Precisão",
+                    "nl": "GPS Toegang",
+                    "fr": "GPS Exactitude",
+                    "it": "GPS Accuratezza",
+                    "es": "GPS Precisión",
+                    "pl": "GPS Accuracyjność",
+                    "zh-cn": "GPS 合法性"
+                  },
+				"type": "number",
+				"read": true,
+				"write": false,
+                "def": 0
+			},
+			"native": {}
+		},
+        {
+			"_id": "devicelocation.LastUpdate",
+			"type": "state",
+			"common": {
+				"role": "state",
+				"name": {
+                    "en": "Last Update",
+                    "de": "Letzte Aktualisierung",
+                    "ru": "Последнее обновление",
+                    "pt": "Última atualização",
+                    "nl": "Laatste Update",
+                    "fr": "Dernière mise à jour",
+                    "it": "Ultimo aggiornamento",
+                    "es": "Última actualización",
+                    "pl": "Update",
+                    "zh-cn": "上次更新"
+                  },
+				"type": "string",
+				"read": true,
+				"write": false,
+                "def": ""
+			},
+			"native": {}
+		}
+	]
+}

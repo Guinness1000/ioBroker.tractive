@@ -1,0 +1,49 @@
+{
+	"eslint.enable": true,
+	"json.schemas": [
+		{
+			"fileMatch": [
+				"io-package.json"
+			],
+			"url": "https://json.schemastore.org/io-package"
+		}
+	],
+	"cSpell.words": [
+		"accountemail",
+		"Adaptador",
+		"Adaptateur",
+		"Adattatore",
+		"devicelocation",
+		"Eerste",
+		"Erstveröffentlichung",
+		"geoposition",
+		"inicial",
+		"iniziale",
+		"lançamento",
+		"localizzatore",
+		"Localizzatore",
+		"loglevel",
+		"lokalizator",
+		"Pierwsze",
+		"Première",
+		"Przyczepny",
+		"rastreador",
+		"Rastreador",
+		"Traactive",
+		"Tractivo",
+		"Traqueur",
+		"Trativo",
+		"uitgave",
+		"Versión",
+		"Versione",
+		"voor",
+		"Winkler",
+		"wydanie",
+		"Адаптер",
+		"версия",
+		"Начальная",
+		"трекер",
+		"трекера",
+		"Тяговый"
+	]
+}

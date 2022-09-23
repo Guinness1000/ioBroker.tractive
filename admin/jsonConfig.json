@@ -1,0 +1,34 @@
+{
+    "i18n": true,
+    "type": "tabs",
+    "items": {
+        "-options": {
+            "type": "panel",
+            "label": "General Settings",
+            "items": {
+                "accountemail": {
+                    "newLine": true,
+                    "type": "text",
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Email address",
+                    "help": "Email address used for your account on tractive"
+                },
+                "password": {
+                    "newLine": true,
+                    "type": "password",
+                    "visible": true,
+                    "repeat": true,
+                    "sm": 12,
+                    "md": 6,
+                    "lg": 6,
+                    "label": "Password",
+                    "help": "Password used for your account on tractive"
+                }
+            }
+
+        }
+    }
+
+}
