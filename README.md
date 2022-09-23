@@ -34,7 +34,8 @@ Specify your Tractive user account information (e-mail and password) on the conf
 	Placeholder for the next version (at the beginning of the line):
 	### **WORK IN PROGRESS**
 -->
-### 0.0.3 (2022-09-23)
+
+### **WORK IN PROGRESS**
 * (Patrick Winkler) First Running Version for Testing
 
 ### 0.0.2 (2022-09-23)
