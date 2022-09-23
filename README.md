@@ -37,7 +37,7 @@ Specify your Tractive user account information (e-mail and password) on the conf
 
 ### **WORK IN PROGRESS**
 
-### 0.0.1 (2022-09-23)
+### 0.0.2 (2022-09-23)
 * (Patrick Winkler) initial release
 
 ## License
