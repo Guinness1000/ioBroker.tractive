@@ -1,9 +1,5 @@
 "use strict";
 
-/*
- * Tractive Adapter ==> Template Created with @iobroker/create-adapter v2.1.1
- */
-
 const utils = require("@iobroker/adapter-core");
 const axios = require("axios").default;
 const ClientID = "5f9be055d8912eb21a4cd7ba";
@@ -24,8 +20,6 @@ class Tractive extends utils.Adapter {
 		this.AccessToken = null;
 		this.AccessTokenExpires = null;
 		this.TrackerID = null;
-
-
 
 		this.on("ready", this.onReady.bind(this));
 		this.on("stateChange", this.onStateChange.bind(this));
@@ -268,6 +262,7 @@ class Tractive extends utils.Adapter {
 
 		} catch (err) {
 			this.log.error(err);
+			this.terminate("");
 		}
 
 
@@ -415,6 +410,7 @@ class Tractive extends utils.Adapter {
 
 			this.log.debug("Device Status : " + response.status);
 			this.disable();
+			return;
 
 		}
 	}
@@ -470,6 +466,7 @@ class Tractive extends utils.Adapter {
 
 			this.log.debug("Device Status : " + response.status);
 			this.disable();
+			return;
 		}
 	}
 
@@ -549,6 +546,7 @@ class Tractive extends utils.Adapter {
 
 			this.log.debug("DeviceLocation Status : " + response.status);
 			this.disable();
+			return;
 
 		}
 
